@@ -5,6 +5,7 @@ const logger = require('morgan');
 const hbs = require('hbs');
 
 // Use of sessions
+//lel
 const session = require('express-session');
 
 /**

@@ -2,7 +2,9 @@ const request = require('supertest');
 const assert = require('assert');
 const usersRouter = require('../routes/users.js');
 const { verifyPwd } = require('../models/User.js');
-// Doesn't work for some reason.
+
+
+// Doesn't work for some reason. 
 /*
 describe("Test if route '/register' works", () => {
 	request(usersRouter)
@@ -17,7 +19,6 @@ describe("Test if route '/register' works", () => {
 
 describe("register password test", () => {
 	test("valid password", () => {
-
 		expect(verifyPwd("UnMotDePasse.123")).toBe(true);
 	});
 	test("password with 8 characters", () => {

@@ -1,6 +1,10 @@
 
 const db = require('../models/db_conf.js');
 
+module.exports.verifyPwd = (password) => {
+	return true;
+}
+
 module.exports.save = (data) => {
     console.log(data);
     const stmt = db.prepare('INSERT INTO users(name, firstname, email, password) VALUES (?, ?, ?, ?)');

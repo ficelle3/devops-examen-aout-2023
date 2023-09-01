@@ -3,6 +3,7 @@ const assert = require('assert');
 const usersRouter = require('../routes/users.js');
 const { verifyPwd } = require('../models/User.js');
 
+
 // Doesn't work for some reason. 
 /*
 describe("Test if route '/register' works", () => {

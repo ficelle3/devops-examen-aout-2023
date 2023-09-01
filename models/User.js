@@ -1,9 +1,15 @@
 
 const db = require('../models/db_conf.js');
 
-module.exports.verifyPwd = (password) => {
-	return true;
-}
+
+
+module.exports.verifyPwd = (password) => { 
+	let regex = new RegExp("^.{8,}$");
+	if(!password.match(regex))return false;
+	if(!password.match(/[A-Za-z]/))return false;
+	if(!password.match(/[0-9]/))return false;
+	if(!password.match(/[\,\?\;\.\:]/))return false; //pas assez de temps pour tout ajouter
+
 
 module.exports.save = (data) => {
     console.log(data);

@@ -68,8 +68,9 @@ router.get('/register', (req, res, next) => {
 router.post('/add', (req, res, next) => {
     console.log("USERS ADD");
     let errors = [];
-    let password = req.body.password;
-    if (!User.verifyPwd(password))errors.push("Ce mot de passe n'est pas valide.");
+
+
+    if(!User.verifyPwd(req.body.userPassword)) errors.push("Ce mot de passe n'est pas valide")
     if (req.body.userPassword != req.body.userPasswordConfirmation) errors.push("Les mot de passes ne correspondent pas");
     if (User.find(req.body.userEmail)) errors.push("Email/Utilisateur déjà présent en DB");
     if (errors.length == 0) {

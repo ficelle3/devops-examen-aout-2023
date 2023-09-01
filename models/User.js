@@ -2,7 +2,7 @@
 const db = require('../models/db_conf.js');
 
 
-module.exports.verifyPwd = (password) => {
+module.exports.verifyPwd = (password) => { 
 	let regex = new RegExp("^.{8,}$");
 	if(!password.match(regex))return false;
 	if(!password.match(/[A-Za-z]/))return false;

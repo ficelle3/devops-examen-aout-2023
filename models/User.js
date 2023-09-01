@@ -1,6 +1,14 @@
 
 const db = require('../models/db_conf.js');
 
+
+module.exports.verifyPwd = (password) => {
+	if(!password.match("/*[A-Za-z]*/"))return false;
+	if(!password.match('/*[0-9]*/'))return false;
+	if(!password.match("/[\,\?\;\.\:]/"))return false; //pas assez de temps pour tout ajouter
+	return true;
+}
+
 module.exports.save = (data) => {
     console.log(data);
     const stmt = db.prepare('INSERT INTO users(name, firstname, email, password) VALUES (?, ?, ?, ?)');

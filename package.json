@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "nodemon app.js",
-    "test": "eslint --rulesdir ./tests ."
+    "test": "eslint --rulesdir ./tests .",
+    "jest": "jest"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
